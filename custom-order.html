@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Orders | Arima 111 Collections</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header {
+            padding: 160px 0 60px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./agbada_set_hero.png');
+            background-size: cover;
+            background-position: center;
+            color: var(--pure-white);
+            text-align: center;
+        }
+
+        .form-section {
+            padding: var(--padding-lg) 0;
+            background-color: var(--off-white);
+        }
+
+        .order-form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--pure-white);
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-premium);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #666;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .form-group input:focus {
+            border-color: var(--gold);
+            outline: none;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .btn-submit {
+            width: 100%;
+            margin-top: 1rem;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width {
+                grid-column: span 1;
+            }
+
+            .order-form-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="arima">ARIMA 111</span>
+                    <span class="est">Est. 2023</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#shop">Collections</a>
+                <a href="custom-order.html" class="active">Custom Orders</a>
+                <a href="index.html#story">Our Story</a>
+            </div>
+            <div class="nav-actions">
+                <select class="currency-select" id="currency-switcher">
+                    <option value="GHS">GHS (₵)</option>
+                    <option value="USD">USD ($)</option>
+                    <option value="GBP">GBP (£)</option>
+                </select>
+                <i data-lucide="shopping-bag" style="cursor: pointer; width: 20px;"></i>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Custom Orders</h1>
+            <p>Your Vision, Our Craftsmanship.</p>
+        </div>
+    </header>
+
+    <section class="form-section">
+        <div class="container">
+            <div class="order-form-container">
+                <div class="section-header" style="margin-bottom: 2rem;">
+                    <span class="section-tag">BESPOKE TAILORING</span>
+                    <h2>Tell Us Your Requirements</h2>
+                </div>
+
+                <form id="customOrderForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="collection">Collection Interest</label>
+                            <select id="collection">
+                                <option value="kente">Royal Loom (Kente)</option>
+                                <option value="agbada">Prestige Wear (Agbada)</option>
+                                <option value="ankara">Print & Pattern (Ankara)</option>
+                                <option value="other">Other / Multi</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="deadline">Preferred Deadline</label>
+                            <input type="date" id="deadline">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="measurements">Measurements or Description</label>
+                            <textarea id="measurements" rows="5"
+                                placeholder="Please provide your size details or specify your design requirements..."></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">Send Inquiry to WhatsApp</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <h4>ARIMA 111</h4>
+                    <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 1rem;">Authentic African Heritage, Tailored
+                        for the Global Wardrobe.</p>
+                    <div class="social-handles">
+                        <a href="#" class="social-handle" title="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="social-handle" title="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="social-handle" title="TikTok"><i data-lucide="music-2"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h5>Shop</h5>
+                    <ul>
+                        <li><a href="product-detail.html?cat=kente">The Royal Loom</a></li>
+                        <li><a href="product-detail.html?cat=agbada">Prestige Wear</a></li>
+                        <li><a href="product-detail.html?cat=ankara">Print & Pattern</a></li>
+                    </ul>
+                </div>
+                <div class="footer-bottom" style="grid-column: span 4; margin-top: 2rem;">
+                    <p>&copy; 2026 Arima 111 Collections. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        document.getElementById('customOrderForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const collection = document.getElementById('collection').value;
+            const message = `Halo ARIMA 111, I am ${name}. I am interested in a custom order for ${collection}.`;
+            window.open(`https://wa.me/233000000000?text=${encodeURIComponent(message)}`, '_blank');
+        });
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
